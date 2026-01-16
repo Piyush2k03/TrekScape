@@ -1,0 +1,129 @@
+
+.search__bar {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 20px 50px 0px;
+    width: max-content;
+    margin: 50px auto;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form__group span {
+    font-size: 1.8em;
+    color: #ee6e6e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===========================
+   INPUT + SELECT BASE STYLES
+   =========================== */
+.form__group input,
+.form__group select {
+    border: none;
+    font-size: 0.95rem;
+    color: var(--heading-color);
+    font-weight: 500;
+    outline: none;
+    background: transparent;
+    padding: 0.3rem 0.5rem;
+}
+
+/* ===========================
+   DROPDOWN STYLING
+   =========================== */
+.form__group select {
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+/* Hover effect */
+.form__group select:hover {
+    background-color: #eceff1;
+}
+
+/* Focus effect */
+.form__group select:focus,
+.form__group input:focus {
+    background-color: #fff;
+    border: 1px solid #ee6e6e;
+    border-radius: 8px;
+}
+
+/* ===========================
+   FIX: LARGE DROPDOWN TEXT
+   =========================== */
+.form__group select {
+    font-size: 1rem !important;
+    height: 40px;
+}
+
+.form__group select option {
+    font-size: 1rem !important;
+    padding: 10px !important;
+    background: #fff;
+    color: var(--heading-color);
+}
+
+/* Divider */
+.form__group-fast {
+    border-right: 2px solid #ddd;
+}
+
+/* Search button */
+.search__icon i {
+    font-size: 1.6rem;
+    padding: 0.6rem;
+    background: var(--secondary-color);
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search__icon i:hover {
+    background: #d85a5a;
+    transform: scale(1.05);
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media only screen and (max-width: 992px) {
+    .search__bar {
+        width: 100%;
+        border-radius: 2rem;
+    }
+
+    .search__bar form {
+        flex-wrap: wrap;
+    }
+
+    .search__bar form .form__group {
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .search__bar form .form__group {
+        width: 100%;
+    }
+
+    .form__group input {
+        font-size: 0.7rem;
+    }
+
+    .form__group span i {
+        font-size: 1.2rem;
+    }
+
+    .form__group h6 {
+        font-size: 1rem;
+    }
+}

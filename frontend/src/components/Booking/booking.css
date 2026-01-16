@@ -1,0 +1,139 @@
+/* src/shared/booking.css */
+
+.booking {
+  padding: 2rem;
+  border: 1px solid rgb(229, 231, 235);
+  border-radius: .5rem;
+  position: sticky;
+  top: 80px; /* Keeps it visible as the user scrolls */
+}
+
+.booking__top {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgb(229, 231, 235);
+}
+
+.booking__top h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.booking__top span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.booking__top span i {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+}
+
+.booking__form {
+  padding-top: 2rem;
+}
+
+.booking__form h5 {
+  margin-bottom: 1rem;
+}
+
+.booking__info-form input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color:var(--heading-color);
+  font-size:1rem;
+  border: none;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.booking__info-form input:focus {
+  outline: none;
+}
+
+.booking__info-form .form__group {
+  margin-bottom: 1rem;
+}
+
+.booking__bottom {
+  margin-top: 1rem;
+}
+
+.booking__bottom li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booking__bottom h5,
+.booking__bottom span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.booking__bottom .total h5,
+.booking__bottom .total span {
+  color: var(--heading-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 992px) {
+  .booking {
+    position: relative;
+    top: 0;
+    margin-top: 2rem;
+  }
+
+  .booking__top h3 {
+    font-size: 1.7rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .booking {
+    padding: 1.5rem;
+  }
+
+  .booking__top h3 {
+    font-size: 1.5rem;
+  }
+
+  .booking__top span {
+    font-size: 1rem;
+  }
+
+  .booking__form h5 {
+    font-size: 1rem;
+  }
+
+  .booking__info-form input {
+    font-size: 0.95rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .booking {
+    padding: 1rem;
+  }
+
+  .booking__top h3 {
+    font-size: 1.3rem;
+  }
+
+  .booking__top span {
+    font-size: 0.9rem;
+  }
+
+  .booking__bottom h5,
+  .booking__bottom span {
+    font-size: 0.9rem;
+  }
+
+  .booking__bottom .total h5,
+  .booking__bottom .total span {
+    font-size: 1rem;
+  }
+}

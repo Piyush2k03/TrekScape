@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Island+Moments&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #ff7e01;
+  --secondary-color: #faa935;
+  --heading-color: #0b2727;
+  --text-color: #6e7074;
+  --font-name: "Montserrat", sans-serif;
+  --subtitle-font-name: "Island Moments", cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-name);
+}
+
+/* Wider Container with minimal padding */
+.container {
+  max-width: 100% !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+@media (min-width: 576px) {
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+}
+
+section {
+  padding: 50px 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+ul {
+  list-style: none;
+}
+
+.primary__btn {
+  background: var(--secondary-color) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 0.4rem 1.5rem !important;
+}
+
+.primary__btn a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #fff;
+}
+.primary__btn a:hover {
+  color: inherit;
+}
+.secondary__btn {
+  background: transparent !important;
+  color: #0b2727 !important;
+  border: none !important;
+  font-weight: 500 !important;
+}
+
+.secondary__btn a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: var(--heading-color);
+}
+
+.secondary__btn a:hover {
+  color: inherit;
+}
+
+.section__subtitle {
+  background: var(--secondary-color);
+  font-family: var(--subtitle-font-name);
+  width: max-content;
+  padding: 0px 0.5rem;
+  padding-right: 1rem;
+
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: var(--heading-color);
+}
+
+@media only screen and (max-width: 992px) {
+  .primary__btn a,
+  .secondary__btn a {
+    font-size: 0.9rem;   
+  }
+  .primary__btn {
+    padding: 0.3rem 1rem !important;
+  }
+  .primary__btn, .secondary__btn, .btn-dark{
+    padding: 0.2rem 1.1rem !important;
+  }
+
+  section{
+    padding:40px 0px;
+  }
+
+  .section__subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  section {
+    padding: 30px 0px;
+  }
+
+  .section__subtitle {
+    font-size: 1.3rem;
+    padding: 0px 0.4rem;
+    padding-right: 0.8rem;
+  }
+
+  .primary__btn, .secondary__btn, .btn-dark {
+    padding: 0.2rem 0.9rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  section {
+    padding: 25px 0px;
+  }
+
+  .section__subtitle {
+    font-size: 1.1rem;
+    padding: 0px 0.3rem;
+    padding-right: 0.7rem;
+  }
+
+  .primary__btn, .secondary__btn, .btn-dark {
+    padding: 0.15rem 0.7rem !important;
+    font-size: 0.8rem !important;
+  }
+}

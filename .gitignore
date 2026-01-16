@@ -1,0 +1,14 @@
+# Node
+node_modules/
+.env
+
+# Build files
+frontend/build
+backend/node_modules
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# OS
+.DS_Store

@@ -1,0 +1,132 @@
+.about-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* -------- HERO SECTION -------- */
+.about-hero {
+  background: url("https://images.unsplash.com/photo-1508264165352-258a6c53f90c?auto=format&fit=crop&w=1400&q=80")
+    center/cover no-repeat;
+  height: 45vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.about-hero-title {
+  position: relative;
+  font-size: 2.8rem;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.about-hero-subtitle {
+  position: relative;
+  z-index: 2;
+  margin-top: 8px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* -------- CONTENT -------- */
+.about-content {
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about-heading {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 35px;
+}
+
+/* -------- FEATURES GRID -------- */
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.feature-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+/* -------- STATES GRID -------- */
+.states-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.state-pill {
+  background: #f3f6ff;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid #e0e6ff;
+}
+
+/* -------- STATS SECTION -------- */
+.stats-section {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.stat-box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.stat-box h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+}
+
+.stat-box p {
+  font-size: 1rem;
+  color: #666;
+}

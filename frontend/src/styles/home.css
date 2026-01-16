@@ -1,0 +1,401 @@
+/* .hero__subtitle img{
+    width:2.3rem;
+    height:2.3rem;
+}
+
+.hero__content h1 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color:var(--heading-color);  
+}
+
+.hero__content h1 .highlighted{
+    color: var(--secondary-color);
+}
+
+.hero__content p{
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+.hero__img-box img, .hero__img-box video{
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    border: 1px solid var(--secondary-color);
+    object-fit: cover;
+}
+
+.hero__content{
+    padding-top: 2rem;
+}
+
+.services__subtitle{
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #ee6e6e;
+    font-family: var(--subtitle-font-name);
+}
+
+.services__title{
+    font-size: 2.5rem;
+    font-weight: 500;
+} */
+
+.hero__subtitle img {
+  width: 2.3rem;
+  height: 2.3rem;
+}
+
+.hero__content h1 {
+  font-size: 3.2rem;  /* fixed spacing */
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: var(--heading-color);
+}
+
+.hero__content h1 .highlighted {  /* fixed typo */
+  color: var(--secondary-color);
+}
+
+.hero__content p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+.hero__img-box img,
+.hero__img-box video {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  border: 1px solid var(--secondary-color);
+  object-fit: cover;
+  transition: transform 0.4s ease; /* ✨ add hover animation */
+}
+
+.hero__img-box img:hover,
+.hero__img-box video:hover {
+  transform: translateY(-10px); /* slide up on hover */
+}
+
+.hero__content {
+  padding-top: 2rem;
+}
+
+.services__subtitle {   /* make sure JSX uses services__subtitle */
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #ee6e6e;
+  font-family: var(--subtitle-font-name);
+}
+
+.services__title {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.featured__treks-title {
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+
+.expeerience__content h2{
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.experience__content p{
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-top: 1rem;
+}
+
+.counter__wrapper{
+  margin-top: 2.5rem;
+}
+
+.counter__box span{
+  width:70px;
+  height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:var(--secondary-color);
+  color:#fff;
+  font-size:1.6rem;
+  font-weight:600;
+  border-radius:10px 5px 10px 5px;
+}
+
+.counter__box h6{
+  font-size: 1.1rem;
+  margin-top: 0.7rem;
+  color:var(--text-color);
+}
+
+.experience__img img{
+  width: 90%;
+}
+
+.gallery__title{
+  font-size: 2.3rem;
+  margin-bottom: 2.5em;
+  margin-top:1rem;
+}
+
+.masonry__img{
+ transition:.3s ;
+}
+
+.masonry__img:hover{
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
+
+.testmonial__title{
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+/* Most Reviewed Treks Chart Section */
+.most-reviewed-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.most-reviewed-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary-color), #ff7e01);
+}
+
+.chart-container {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(250, 169, 53, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary-color), #ff7e01);
+}
+
+.chart-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* TABLET RESPONSIVE */
+@media only screen and (max-width: 992px) {
+  .hero__content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero__content p {
+    font-size: 1rem;
+  }
+
+  .services__subtitle {
+    font-size: 1.8rem;
+  }
+
+  .services__title {
+    font-size: 2rem;
+  }
+
+  .featured__treks-title {
+    font-size: 2rem;
+  }
+
+  .hero__img-box {
+    display: none;
+  }
+
+  .hero__video-box {
+    display: block;
+  }
+
+  .chart-container {
+    padding: 30px 20px;
+  }
+
+  .most-reviewed-section h2 {
+    font-size: 2rem;
+  }
+
+  .counter__wrapper {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .counter__box {
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 120px;
+  }
+}
+
+/* MOBILE RESPONSIVE */
+@media only screen and (max-width: 768px) {
+  .hero__content {
+    padding-top: 1rem;
+  }
+
+  .hero__content h1 {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero__content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .services__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .services__title {
+    font-size: 1.7rem;
+  }
+
+  .featured__treks-title {
+    font-size: 1.7rem;
+  }
+
+  .section__subtitle {
+    font-size: 1.4rem;
+  }
+
+  .experience__content h2 {
+    font-size: 2rem;
+  }
+
+  .experience__content p {
+    font-size: 1rem;
+  }
+
+  .gallery__title {
+    font-size: 1.7rem;
+  }
+
+  .testmonial__title {
+    font-size: 1.7rem;
+  }
+
+  .counter__wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .counter__box {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .experience__img img {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .chart-container {
+    padding: 20px 15px;
+    border-radius: 10px;
+  }
+
+  .most-reviewed-section h2 {
+    font-size: 1.7rem;
+  }
+
+  .most-reviewed-section p {
+    font-size: 0.95rem;
+  }
+
+  /* Chart responsive adjustments */
+  .most-reviewed-section .chart-container {
+    overflow-x: auto;
+  }
+
+  .chart-responsive {
+    height: 350px !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .chart-responsive {
+    height: 300px !important;
+  }
+  .hero__content h1 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .hero__content p {
+    font-size: 0.9rem;
+  }
+
+  .services__subtitle {
+    font-size: 1.3rem;
+  }
+
+  .services__title {
+    font-size: 1.5rem;
+  }
+
+  .featured__treks-title {
+    font-size: 1.5rem;
+  }
+
+  .section__subtitle {
+    font-size: 1.2rem;
+    padding: 0px 0.4rem;
+    padding-right: 0.8rem;
+  }
+
+  .experience__content h2 {
+    font-size: 1.7rem;
+  }
+
+  .gallery__title {
+    font-size: 1.5rem;
+  }
+
+  .testmonial__title {
+    font-size: 1.5rem;
+  }
+
+  .chart-container {
+    padding: 15px 10px;
+  }
+
+  .most-reviewed-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .most-reviewed-section p {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,166 @@
+/* ------------------------------
+   Trek Card – Clean & Modern UI
+------------------------------- */
+
+/* Card Container */
+.trek__card {
+  margin-bottom: 20px;
+}
+
+.card {
+  border: none !important;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 30px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ------------------------------
+   Trek Image
+------------------------------- */
+.tour__img {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tour__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tour__img span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px 0 0 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ------------------------------
+   Top Section (rating / location)
+------------------------------- */
+
+.card__top {
+  margin-bottom: 10px;
+}
+
+.tour__location,
+.tour__rating {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--heading-color);
+}
+
+.tour__location i,
+.tour__rating i {
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+/* ------------------------------
+   Title Section
+------------------------------- */
+.tour__title {
+  margin-top: 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.tour__title a,
+.tour__title a:visited {
+  text-decoration: none;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+}
+
+.tour__title a:hover {
+  color: var(--secondary-color);
+}
+
+/* ------------------------------
+   Trek Info (Difficulty, Price)
+------------------------------- */
+.tour__address,
+p {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+/* ------------------------------
+   Buttons Section
+------------------------------- */
+/* ------------------------------
+   Buttons (Both Orange Initially)
+------------------------------- */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.book-btn,
+.visited-btn {
+  padding: 7px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background: #f1862e;       /* SAME orange as featured */
+  color: white;
+}
+
+/* Hover for both buttons */
+.book-btn:hover,
+.visited-btn:hover:not(.visited) {
+  background: #e0601f;       /* darker orange */
+}
+
+/* ------------------------------
+   Visited Button after Click (Green)
+------------------------------- */
+.visited-btn.visited {
+  background: #28a745 !important;   /* green */
+  color: #fff;
+}
+
+.visited-btn.visited:hover {
+  background: #1e7e34 !important;   /* darker green */
+}
+/* FORCE BOOK NOW BUTTON ORANGE */
+.trek__card .book-btn {
+  background: #f1862e !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .book-btn,
+  .visited-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
