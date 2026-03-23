@@ -8,32 +8,31 @@ import userRoute from "./routes/users.js"
 import authRoute from "./routes/auth.js"
 import reviewRoute from "./routes/reviews.js"
 import bookingRoute from './routes/bookings.js';
+import Tour from './models/Tour.js'; // Imported for the /test route
 
 dotenv.config()
 const app=express()
 const port=process.env.PORT || 8000
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: ["http://localhost:3000", "http://10.116.35.205:3000"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
-//for testing
-// app.get("/",(req,res)=>{
-//     res.send("api is working");
-// });
-
 
 //database connection
 mongoose.set("strictQuery",false);
 const connect = async()=>{
     try{
-        await mongoose.connect(process.env.MONGO_URI,{
-        });
-        console.log("MongoDb database Connected");
+        console.log("--- DEBUG LOGS START ---");
+        console.log("MONGO_URI length:", process.env.MONGO_URI ? process.env.MONGO_URI.length : "UNDEFINED! You must add it to Render Environment Variables!");
+        
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log("MongoDb database Connected successfully");
+        console.log("--- DEBUG LOGS END ---");
 
     }catch(err){
-      console.log("MongoDB database connection failed");
+      console.log("MongoDB error:", err.message);
     }
 };
 
@@ -47,9 +46,26 @@ app.use('/api/v1/auth',authRoute);
 app.use('/api/v1/reviews',reviewRoute);
 app.use('/api/v1/bookings',bookingRoute);
 
-
-
-
+// STEP 5 QUICK TEST ROUTE (FINAL CHECK)
+app.get("/test", async (req, res) => {
+  try {
+    // Attempting to query the database directly
+    const data = await Tour.find().limit(2);
+    res.json({ 
+        action: "Testing MongoDb Fetching",
+        status: "SUCCESS!", 
+        data: data 
+    });
+  } catch (err) {
+    // Exposing the exact mongoose error to the browser
+    res.json({ 
+        action: "Testing MongoDb Fetching",
+        status: "FAILED!",
+        error: err.message,
+        hint: process.env.MONGO_URI ? "Check MongoDB IP Atlas Whitelist" : "MONGO_URI is missing on Render!"
+    });
+  }
+});
 
 app.listen(port, ()=>{
     connect();
