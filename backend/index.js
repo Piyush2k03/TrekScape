@@ -49,8 +49,8 @@ app.use('/api/v1/bookings',bookingRoute);
 // STEP 5 QUICK TEST ROUTE (FINAL CHECK)
 app.get("/test", async (req, res) => {
   try {
-    // Attempting to query the database directly
-    const data = await Tour.find().limit(2);
+    // Attempting to query the database directly WITH POPULATE
+    const data = await Tour.find().populate("reviews").limit(2);
     res.json({ 
         action: "Testing MongoDb Fetching",
         status: "SUCCESS!", 
