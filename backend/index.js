@@ -14,7 +14,7 @@ dotenv.config()
 const app=express()
 const port=process.env.PORT || 8000
 const corsOptions = {
-  origin: ["http://localhost:3000", "http://10.116.35.205:3000"],
+  origin: true, // This allows any frontend URL (like your Vercel URL) to connect to your backend
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
