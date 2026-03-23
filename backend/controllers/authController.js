@@ -153,10 +153,10 @@ export const login = async (req, res) => {
     // Remove password before sending response
     const { password, ...rest } = user._doc;
 
-    //  Generate JWT token
+    const secret = process.env.JWT_SECRET_KEY || "fallback_secret_key";
     const token = jwt.sign(
       { id: user._id, role: user.role }, 
-      process.env.JWT_SECRET_KEY,
+      secret,
       { expiresIn: "20d" }
     );
 
