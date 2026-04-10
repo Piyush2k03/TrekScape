@@ -25,6 +25,17 @@ export const getBooking = async (req, res) => {
     }
 }
 
+// Get user specific bookings
+export const getUserBookings = async (req, res) => {
+    const userId = req.user.id;
+    try {
+        const bookings = await Booking.find({ userId: userId }).sort({ createdAt: -1 });
+        res.status(200).json({success:true, message:"User bookings fetched", data: bookings});
+    } catch (err) {
+        res.status(500).json({success:false, message:"Internal Server Error"});
+    }
+}
+
 // Get all bookings
 export const getAllBookings = async (req, res) => {
     try {

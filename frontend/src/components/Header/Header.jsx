@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useContext } from "react";
+import React, { useRef, useEffect, useContext, useState } from "react";
 import { Container, Row, Button } from "reactstrap";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
@@ -16,6 +16,7 @@ const Header = () => {
   const menuRef = useRef(null);
   const navigate = useNavigate();
   const { user, dispatch } = useContext(AuthContext);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // LOGOUT HANDLER
   const logout = () => {
@@ -83,21 +84,71 @@ const Header = () => {
             <div className="nav__right d-flex align-items-center gap-4">
               <div className="nav__btns d-flex align-items-center gap-4">
 
-                {/* ADMIN PANEL BUTTON */}
-                {user && user.role === "admin" && (
-                  <Button className="btn btn-warning">
-                    <Link to="/admin/dashboard">Admin Panel</Link>
-                  </Button>
-                )}
+                {/* ADMIN PANEL BUTTON (Moved to dropdown for cleanliness) */}
 
                 {/* LOGIN / LOGOUT */}
                 {user ? (
-                  <>
-                    <h5 className="mb-0">Hello, {user.username}</h5>
-                    <Button className="btn btn-dark" onClick={logout}>
-                      Logout
-                    </Button>
-                  </>
+                  <div className="profile__dropdown" style={{position: "relative"}}>
+                    {/* Circle Profile Icon */}
+                    <div 
+                      className="profile__icon" 
+                      onClick={() => setDropdownOpen(!dropdownOpen)}
+                      style={{
+                        width: "45px", 
+                        height: "45px", 
+                        borderRadius: "50%", 
+                        background: "#faa935", 
+                        color: "white", 
+                        display: "flex", 
+                        alignItems: "center", 
+                        justifyContent: "center", 
+                        cursor: "pointer",
+                        fontWeight: "600",
+                        fontSize: "1.4rem",
+                        userSelect: "none"
+                      }}
+                    >
+                      {user.username.charAt(0).toUpperCase()}
+                    </div>
+
+                    {/* Dropdown Menu */}
+                    {dropdownOpen && (
+                      <div className="dropdown-menu show" style={{
+                        position: "absolute",
+                        top: "115%",
+                        right: "0",
+                        minWidth: "180px",
+                        padding: "15px",
+                        border: "none"
+                      }}>
+                        <h6 className="text-center pb-2 mb-1" style={{fontWeight: "600", color: "#2c3e50"}}>
+                          Hi, {user.username}
+                        </h6>
+                        <hr className="mt-1 mb-2"/>
+                        <Link to="/profile" state={{ tab: "account" }} className="dropdown-item d-flex align-items-center" onClick={() => setDropdownOpen(false)}>
+                          <i className="ri-user-line" style={{marginRight: "8px", fontSize: "1.1rem"}}></i> My Account
+                        </Link>
+                        <Link to="/profile" state={{ tab: "bookings" }} className="dropdown-item d-flex align-items-center" onClick={() => setDropdownOpen(false)}>
+                          <i className="ri-calendar-event-line" style={{marginRight: "8px", fontSize: "1.1rem"}}></i> My Bookings
+                        </Link>
+                        <Link to="/profile" state={{ tab: "visited" }} className="dropdown-item d-flex align-items-center" onClick={() => setDropdownOpen(false)}>
+                          <i className="ri-checkbox-circle-line" style={{marginRight: "8px", fontSize: "1.1rem"}}></i> Visited Treks
+                        </Link>
+                        <Link to="/my-wishlist" className="dropdown-item d-flex align-items-center" onClick={() => setDropdownOpen(false)}>
+                          <i className="ri-heart-line" style={{marginRight: "8px", fontSize: "1.1rem"}}></i> Wishlist ❤️
+                        </Link>
+                        {user.role === "admin" && (
+                          <Link to="/admin/dashboard" className="dropdown-item d-flex align-items-center" onClick={() => setDropdownOpen(false)}>
+                            <i className="ri-dashboard-line" style={{marginRight: "8px", fontSize: "1.1rem"}}></i> Admin Panel
+                          </Link>
+                        )}
+                        <hr className="my-2" />
+                        <span onClick={() => { logout(); setDropdownOpen(false); }} className="dropdown-item d-flex align-items-center" style={{cursor: "pointer", color: "#e74c3c", fontWeight: "500"}}>
+                          <i className="ri-logout-circle-line" style={{marginRight: "8px", fontSize: "1.1rem"}}></i> Logout
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 ) : (
                   <>
                     <Button className="btn secondary__btn">

@@ -8,6 +8,9 @@ import userRoute from "./routes/users.js"
 import authRoute from "./routes/auth.js"
 import reviewRoute from "./routes/reviews.js"
 import bookingRoute from './routes/bookings.js';
+import wishlistRoute from './routes/wishlist.js';
+import visitedRoute from './routes/visited.js';
+import weatherRoute from './routes/weather.js';
 import Tour from './models/Tour.js'; // Imported for the /test route
 
 dotenv.config()
@@ -45,6 +48,9 @@ app.use('/api/v1/users',userRoute);
 app.use('/api/v1/auth',authRoute);
 app.use('/api/v1/reviews',reviewRoute);
 app.use('/api/v1/bookings',bookingRoute);
+app.use('/api/v1/wishlist', wishlistRoute);
+app.use('/api/v1/visited', visitedRoute);
+app.use('/api/v1/weather', weatherRoute);
 
 // STEP 5 QUICK TEST ROUTE (FINAL CHECK)
 app.get("/test", async (req, res) => {

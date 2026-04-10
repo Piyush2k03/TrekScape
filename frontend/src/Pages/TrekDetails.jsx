@@ -12,6 +12,7 @@ import { BASE_URL } from "../utils/config";
 import useFetch from "../hooks/useFetch";
 import NewsLetter from "../shared/NewsLetter";
 import { AuthContext } from "../Context/AuthContext";
+import Weather from "../components/Weather/Weather";
 
 const TrekDetails = () => {
   const { id } = useParams();
@@ -20,6 +21,58 @@ const TrekDetails = () => {
   const { user } = useContext(AuthContext);
 
   const { data: trek, loading, error } = useFetch(`${BASE_URL}/tours/${id}`);
+
+  // -------------------------------
+  // WISHLIST FEATURE
+  // -------------------------------
+  const [isSaved, setIsSaved] = useState(false);
+
+  useEffect(() => {
+    if (user && trek?._id) {
+      const fetchWishlist = async () => {
+        try {
+          const res = await fetch(`${BASE_URL}/wishlist`, {
+            headers: {
+              "Authorization": `Bearer ${user.token || ""}`
+            },
+            credentials: "include"
+          });
+          const result = await res.json();
+          if (result.success) {
+            const savedTours = result.data.map(item => item.tourId._id || item.tourId);
+            setIsSaved(savedTours.includes(trek._id));
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      };
+      fetchWishlist();
+    }
+  }, [user, trek]);
+
+  const toggleWishlist = async () => {
+    if (!user) {
+      alert("Please login to use wishlist");
+      return;
+    }
+    try {
+      const res = await fetch(`${BASE_URL}/wishlist/${trek._id}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials: "include"
+      });
+      const result = await res.json();
+      if (result.success) {
+        setIsSaved(result.action === "added");
+      } else {
+        alert(result.message);
+      }
+    } catch (err) {
+      alert("Failed to update wishlist");
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -130,8 +183,26 @@ const TrekDetails = () => {
 
               {/* LEFT COLUMN */}
               <Col lg="8">
-                <div className="tour__content">
+                <div className="tour__content" style={{position: "relative"}}>
                   <img src={photo} alt={title} />
+                  <button 
+                    onClick={toggleWishlist} 
+                    className="wishlist-heart-btn"
+                    style={{
+                      position: "absolute",
+                      top: "20px",
+                      right: "20px",
+                      background: "transparent",
+                      border: "none",
+                      fontSize: "2rem",
+                      color: isSaved ? "red" : "white",
+                      textShadow: "0 0 4px black",
+                      cursor: "pointer",
+                      zIndex: 10
+                    }}
+                  >
+                    {isSaved ? "❤️" : "🤍"}
+                  </button>
 
                   <div className="tour__info" style={{ marginTop: "15px" }}>
 
@@ -176,7 +247,7 @@ const TrekDetails = () => {
                         display: "flex",
                         flexWrap: "wrap",
                         gap: "25px",
-                        marginBottom: "25px",
+                        marginBottom: "15px",
                         color: "#333",
                       }}
                     >
@@ -209,6 +280,11 @@ const TrekDetails = () => {
                           <i className="ri-road-map-line"></i> View on Map
                         </a>
                       )}
+                    </div>
+
+                    {/* Weather Component */}
+                    <div style={{ marginBottom: "25px" }}>
+                      <Weather location={address} fallbackLocation={state} />
                     </div>
 
                     {/* Description */}

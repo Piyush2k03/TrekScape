@@ -230,7 +230,7 @@ const tours = [
     category: "Fort Trek",
     featured: true,
   },
- {
+  {
     T_id: "05",
     title: "Raigad Fort Trek",
     state: "Maharashtra, India",
@@ -309,78 +309,78 @@ const tours = [
   // },
 
   /* ================= Nature Trails ================= */
- 
 
-//   /* ================= Regular Treks ================= */
-// import tourImg16 from "../images/tour-img16.jpg";
-// import tourImg17 from "../images/tour-img17.jpg";
-// import tourImg18 from "../images/tour-img18.jpg";
-// import tourImg19 from "../images/tour-img19.jpg";
-// import tourImg20 from "../images/tour-img20.jpg";
 
-// const tours = [
-//   // ... your previous treks 01–15
+  //   /* ================= Regular Treks ================= */
+  // import tourImg16 from "../images/tour-img16.jpg";
+  // import tourImg17 from "../images/tour-img17.jpg";
+  // import tourImg18 from "../images/tour-img18.jpg";
+  // import tourImg19 from "../images/tour-img19.jpg";
+  // import tourImg20 from "../images/tour-img20.jpg";
 
-//   {
-//     id: "16",
-//     title: "Kalsubai Peak Trek",
-//     state: "Maharashtra, India",
-//     address: "Ahmednagar District",
-//     DifLevel: "Hard",
-//     price: 130,
-//     avgRating: 4.9,
-//     reviews: [{ name: "Deepa Kulkarni", rating: 5.0 }],
-//     photo: tourImg16,
-//     category: "Regular Trek",
-//   },
-//   {
-//     id: "17",
-//     title: "Kalavantin Durg Trek",
-//     state: "Maharashtra, India",
-//     address: "Panvel, Raigad District",
-//     DifLevel: "Hard",
-//     price: 120,
-//     avgRating: 4.8,
-//     reviews: [{ name: "Sanjay Jadhav", rating: 4.9 }],
-//     photo: tourImg17,
-//     category: "Regular Trek",
-//   },
-//   {
-//     id: "18",
-//     title: "Peb Fort (Vikatgad) Trek",
-//     state: "Maharashtra, India",
-//     address: "Matheran Range",
-//     DifLevel: "Moderate",
-//     price: 90,
-//     avgRating: 4.6,
-//     reviews: [{ name: "Neha Chavan", rating: 4.7 }],
-//     photo: tourImg18,
-//     category: "Regular Trek",
-//   },
-//   {
-//     id: "19",
-//     title: "Dukes Nose (Nagphani) Trek",
-//     state: "Maharashtra, India",
-//     address: "Near Lonavala",
-//     DifLevel: "Moderate",
-//     price: 85,
-//     avgRating: 4.5,
-//     reviews: [{ name: "Aarav Patil", rating: 4.4 }],
-//     photo: tourImg19,
-//     category: "Regular Trek",
-//   },
-//   {
-//     id: "20",
-//     title: "Irshalgad Trek",
-//     state: "Maharashtra, India",
-//     address: "Near Panvel, Raigad District",
-//     DifLevel: "Moderate",
-//     price: 95,
-//     avgRating: 4.6,
-//     reviews: [{ name: "Komal More", rating: 4.7 }],
-//     photo: tourImg20,
-//     category: "Regular Trek",
-//   },
+  // const tours = [
+  //   // ... your previous treks 01–15
+
+  //   {
+  //     id: "16",
+  //     title: "Kalsubai Peak Trek",
+  //     state: "Maharashtra, India",
+  //     address: "Ahmednagar District",
+  //     DifLevel: "Hard",
+  //     price: 130,
+  //     avgRating: 4.9,
+  //     reviews: [{ name: "Deepa Kulkarni", rating: 5.0 }],
+  //     photo: tourImg16,
+  //     category: "Regular Trek",
+  //   },
+  //   {
+  //     id: "17",
+  //     title: "Kalavantin Durg Trek",
+  //     state: "Maharashtra, India",
+  //     address: "Panvel, Raigad District",
+  //     DifLevel: "Hard",
+  //     price: 120,
+  //     avgRating: 4.8,
+  //     reviews: [{ name: "Sanjay Jadhav", rating: 4.9 }],
+  //     photo: tourImg17,
+  //     category: "Regular Trek",
+  //   },
+  //   {
+  //     id: "18",
+  //     title: "Peb Fort (Vikatgad) Trek",
+  //     state: "Maharashtra, India",
+  //     address: "Matheran Range",
+  //     DifLevel: "Moderate",
+  //     price: 90,
+  //     avgRating: 4.6,
+  //     reviews: [{ name: "Neha Chavan", rating: 4.7 }],
+  //     photo: tourImg18,
+  //     category: "Regular Trek",
+  //   },
+  //   {
+  //     id: "19",
+  //     title: "Dukes Nose (Nagphani) Trek",
+  //     state: "Maharashtra, India",
+  //     address: "Near Lonavala",
+  //     DifLevel: "Moderate",
+  //     price: 85,
+  //     avgRating: 4.5,
+  //     reviews: [{ name: "Aarav Patil", rating: 4.4 }],
+  //     photo: tourImg19,
+  //     category: "Regular Trek",
+  //   },
+  //   {
+  //     id: "20",
+  //     title: "Irshalgad Trek",
+  //     state: "Maharashtra, India",
+  //     address: "Near Panvel, Raigad District",
+  //     DifLevel: "Moderate",
+  //     price: 95,
+  //     avgRating: 4.6,
+  //     reviews: [{ name: "Komal More", rating: 4.7 }],
+  //     photo: tourImg20,
+  //     category: "Regular Trek",
+  //   },
   /* ================= Himachal Pradesh Treks ================= */
   {
     T_id: "09",

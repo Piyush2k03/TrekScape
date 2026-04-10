@@ -73,6 +73,21 @@ export const getSingleUser = async (req, res) => {
   }
 };
 
+// ✅ Get logged in user profile securely
+export const getUserProfile = async (req, res) => {
+  const id = req.user.id; // from JWT middleware
+  try {
+    const user = await User.findById(id);
+    if (!user) return res.status(404).json({ success: false, message: "User not found" });
+    
+    // Don't send password
+    const { password, ...rest } = user._doc;
+    res.status(200).json({ success: true, message: "Profile retrieved", data: rest });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Server Error" });
+  }
+};
+
 // ✅ Get all users (with optional pagination)
 export const getAllUsers = async (req, res) => {
   try {

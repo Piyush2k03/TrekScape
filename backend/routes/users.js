@@ -6,6 +6,7 @@ import {
   getSingleUser,
   getAllUsers,
   getUserCount,
+  getUserProfile,
 } from "../controllers/userController.js";
 
 const router = express.Router();
@@ -13,6 +14,7 @@ const router = express.Router();
 import{ verifyAdmin,verifyUser} from "../utils/verifyTokens.js";
 
 router.post("/", createUser);
+router.get("/profile", verifyUser, getUserProfile);
 router.put("/:id",verifyUser, updateUser);
 router.delete("/:id", verifyUser,deleteUser);
 router.get("/", getAllUsers);

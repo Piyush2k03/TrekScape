@@ -10,6 +10,7 @@ import UserProfile from '../Pages/UserProfile.jsx';
 import SearchResultList from '../Pages/SearchResultList.jsx';
 import ThankYou from '../Pages/ThankYou.jsx';
 import About from '../Pages/About.jsx';
+import MyWishlist from '../Pages/MyWishlist.jsx';
 import AdminDashboard from "../Pages/AdminDashboard.jsx";
 import AdminTours from "../Pages/AdminTours.jsx";
 import AdminUsers from "../Pages/AdminUsers.jsx";
@@ -30,6 +31,7 @@ const Routers = () => {
 
       <Route path="/thank-you" element={<ThankYou />} />
       <Route path="/profile" element={<UserProfile />} />
+      <Route path="/my-wishlist" element={<MyWishlist />} />
 
       <Route path="/tours/search" element={<SearchResultList />} />
 
